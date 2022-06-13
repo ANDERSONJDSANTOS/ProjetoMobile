@@ -1,17 +1,16 @@
 import TextInput from '../../../../components/text-input/index';
-import DontHaveAnAccount from '../dont-have-an-account/index';
-
 import Button from '../../../../components/button/index';
-import { View } from 'react-native';
 
+import { View } from 'react-native';
 import { useState } from 'react';
 
-const Form = ({ navigation }) => {
+const Form = () => {
   const [ email, setEmail ] = useState('');
+  const [ name, setName ] = useState('');
   const [ password, setPassword ] = useState('');
 
   return (
-    <View style={{ marginTop:30 }}>
+    <View>
       <TextInput
         autoComplete='email'
         icon='envelope'
@@ -19,6 +18,15 @@ const Form = ({ navigation }) => {
         onChangeText={ setEmail }
         placeholder='Email'
         value={ email }
+      />
+      <TextInput
+        autoComplete='name'
+        customStyles={{ marginTop:15 }}
+        icon='user'
+        maxLength={ 30 }
+        onChangeText={ setName }
+        placeholder='Nome'
+        value={ name }
       />
       <TextInput
         customStyles={{ marginTop:15, marginBottom:15 }}
@@ -30,9 +38,8 @@ const Form = ({ navigation }) => {
         value={ password }
       />
       <Button
-        content='Entrar'
-      />
-      <DontHaveAnAccount navigation={ navigation }/>
+        content='Criar'
+      />    
     </View>
   )
 }

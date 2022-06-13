@@ -3,10 +3,8 @@ import color from '../../global/colors';
 
 const styles = StyleSheet.create({
   logo: {
-    fontSize:40,
     fontWeight:"bold",
     letterSpacing:2,
-    textAlign:'center'
   },
 
   safe: {

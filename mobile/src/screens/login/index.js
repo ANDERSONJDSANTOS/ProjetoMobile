@@ -1,5 +1,5 @@
-import LoginModule from "../../modules/login";
+import LoginModule from "../../modules/login/index";
 
-const Login = () => <LoginModule/>
+const Login = ({ navigation }) => <LoginModule navigation={ navigation }/>
 
 export default Login;

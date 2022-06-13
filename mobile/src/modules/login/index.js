@@ -1,14 +1,13 @@
+import LoginForm from './components/form/index';
 import Logo from '../../components/logo/index';
-import LoginForm from './components/form';
 
 import { View } from 'react-native';
 
-const LoginModule = () => {
+const LoginModule = ({ navigation }) => {
   return (
     <View style={ containerStyle }>
-      <Logo/>
-      <LoginForm/>
-      
+      <Logo customStyles={{ textAlign:'center', fontSize:40 }}/>
+      <LoginForm navigation={ navigation }/>
     </View>
   );
 }
