@@ -9,6 +9,7 @@ import { useState } from 'react';
 const Form = ({ navigation }) => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+  const goToHomePage = () => navigation.navigate('Home')
 
   return (
     <View style={{ marginTop:30 }}>
@@ -31,6 +32,7 @@ const Form = ({ navigation }) => {
       />
       <Button
         content='Entrar'
+        onPress={ goToHomePage }
       />
       <DontHaveAnAccount navigation={ navigation }/>
     </View>

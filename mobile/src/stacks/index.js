@@ -1,7 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../screens/login/index';
+import SignUpScreen from '../screens/sign-up/index';
 
-import SignUp from '../screens/sign-up/index';
+import LoginScreen from '../screens/login/index';
+import HomeScreen from '../screens/home/index';
+
 import Logo from '../components/logo';
 
 const Stack = createNativeStackNavigator();
@@ -27,11 +29,16 @@ function Screens() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        component={ SignUp }
+        component={ SignUpScreen }
         name='Cadastre-se'
       />
+      <Stack.Screen 
+        component={ HomeScreen } 
+        name='Home'
+        options={{ headerBackVisible:false }}
+      />
     </Stack.Navigator>
-  )
+  );
 }
 
 export default Screens;
