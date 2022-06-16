@@ -2,7 +2,7 @@
 
 ## DESCRIÇÃO
 
-Esse é um projeto que tem como principal objetivo criar um aplicativo que baixe videos do youtube no seu celular, com facilidade e segurança.
+Esse é um projeto que tem como principal objetivo criar um aplicativo que armazene as senhas dos usuários de variadas contas, a pedido do usuario.
 
 ## API
 
