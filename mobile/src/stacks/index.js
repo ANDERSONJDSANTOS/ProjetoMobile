@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CreateCategory from '../screens/create-category/index';
+
 import SignUpScreen from '../screens/sign-up/index';
-
 import LoginScreen from '../screens/login/index';
-import HomeScreen from '../screens/home/index';
 
+import HomeScreen from '../screens/home/index';
 import Logo from '../components/logo';
 
 const Stack = createNativeStackNavigator();
@@ -36,6 +37,10 @@ function Screens() {
         component={ HomeScreen } 
         name='Home'
         options={{ headerBackVisible:false }}
+      />
+      <Stack.Screen
+        component={ CreateCategory }
+        name='Criar categoria'
       />
     </Stack.Navigator>
   );

@@ -3,9 +3,11 @@ import { TouchableOpacity, View } from 'react-native';
 
 import styles from './styles';
 
-const CreateCategoryButton = () => {
+const CreateCategoryButton = ({ navigation }) => {
+  const goToCreateCategoryPage = () => navigation.navigate('Criar categoria');
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={ goToCreateCategoryPage }>
       <View style={ styles.container }>
         <Icon
           color='white'

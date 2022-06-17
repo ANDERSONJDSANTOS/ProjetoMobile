@@ -26,7 +26,7 @@ const userEsquema = new esquema({
   token: {
     type: String,
     maxlength: 100,
-  },
+  }
 
 }) 
 

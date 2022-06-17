@@ -18,4 +18,4 @@ const containerStyle = {
   padding:20
 }
 
-export default LoginModule
+export default LoginModule;

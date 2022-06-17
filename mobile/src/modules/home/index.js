@@ -7,7 +7,7 @@ import ListOfCategories from './components/list-of-categories/index';
 import { View } from 'react-native';
 import { useState } from 'react';
 
-const HomeModule = () => {
+const HomeModule = ({ navigation }) => {
   const [ categories, setCategories ] = useState(mockCategories);
 
   return (
@@ -15,7 +15,7 @@ const HomeModule = () => {
       { categories.length > 0 
       ? (<ListOfCategories categories={ categories }/>) 
       : (<ThereAreNotCategories/>)}
-      <CreateCategoryButton />
+      <CreateCategoryButton navigation={ navigation } />
     </View>
   );
 }
