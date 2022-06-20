@@ -77,3 +77,7 @@ a
 ```
 
 É possível abrir o app no seu celular se você possuir o expo instalado no memso, para isso você deve executar o comando **npm run start**, e abrir o qr code que irá aparecer no seu terminal, no seu app do expo.
+
+## CRÉDITOS
+Desenvolvido por Anderson Santos e Glauber Bispo.
+
