@@ -1,28 +1,31 @@
-require("dotenv").config()//importando globalmente
-const body_parser =require("body-parser") 
-const express = require("express")
-const conectaComBancoDeDados=require('./src/configs/mongo')
-const app = express()
-const porta = process.env.PORTA
+require("dotenv").config();
 
-app.use(body_parser.json())
+const connectWithDb = require('./src/configs/mongo');
+const bodyParse = require("body-parser"); 
 
-app.get("/", (req, res) => {
-    console.log('aprendendo api')
-    res.status(200).json("retornado com sucesso")
-})
+const routes = require('./routes');
+const express = require("express");
 
-async function configurarServidor(){
-    try {
-        
-        await conectaComBancoDeDados()
-        app.listen(porta, () => {
-            console.log(`aplicação rodando na porta ${porta}`)
-        })
-        
-    } catch (erro) {
-        console.log(`Algo deu errado ${erro}`)
-        
-    }
+const app = express();
+
+app.use(bodyParse.json());
+app.use(routes);
+
+app.use((err, req, res, next) => {
+  console.log(err.stack);
+  const message = 'Um erro ocorreu, estamos trabalhando para resolver';
+  res.status(500).json(message);
+});
+
+async function configServer(){
+  try {
+    const porta = process.env.PORT;
+    await connectWithDb();
+    app.listen(porta, () => console.log(`aplicação rodando na porta ${porta}`));  
+  } 
+  catch (erro) {
+    console.log(`Algo deu errado ${erro}`)
+  }
 }
-configurarServidor()
+
+configServer();

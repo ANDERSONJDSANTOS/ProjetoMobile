@@ -1,8 +1,8 @@
-const mongose = require('mongoose')
+const mongoose = require('mongoose');
 
-const esquema = mongose.Schema
+const Schema = mongoose.Schema;
 
-const userEsquema = new esquema({
+const userSchema = new Schema({
   email: {
     type: String,
     require: true,
@@ -10,28 +10,27 @@ const userEsquema = new esquema({
     unique: true,
   },
 
-  senha: {
+  password: {
     type: String,
     require: true,
     maxlength: 100,
   },
 
-  nome: {
+  name: {
     type: String,
     require: true,
     maxlength: 20,
-
   },
 
   token: {
     type: String,
     maxlength: 100,
   }
+},
+{
+  timestamps: true
+});
 
-}) 
+const userModel = mongoose.models.users || mongoose.model('users', userSchema);
 
-
-const userModel= mongose.models.usuarios || mongose.model('usuarios',userEsquema)
-
-module.exports = userModel
-
+module.exports = userModel;

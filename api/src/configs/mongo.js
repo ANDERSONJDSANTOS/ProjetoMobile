@@ -1,7 +1,7 @@
-const mongose = require("mongoose")
+const mongoose = require('mongoose');
 
-
-module.exports =async function conectaComBancoDeDados(){
-    await mongose.connect(process.env.URL_BANCO)
+//CONNECT WITH DATABASE
+module.exports = async () => {
+  const connectionUrl = process.env.CONNECTION_URL;
+  await mongoose.connect(connectionUrl);
 }
-
