@@ -30,6 +30,15 @@ cd api
 npm run test
 ```
 
+## DOCKER
+
+Caso você não queira instalar o mongo na sua máquina é possível usar ele com o docker, basta usar o seguinte comando:
+
+```
+#AO RODAR ESSE COMANDO VOCÊ TERÁ O MONGO DISPONÍVEL NESSE URL: mongodb://localhost:27017
+docker compose up -d
+```
+
 ## FRONTEND
 
 ### COMO SE RODAR
