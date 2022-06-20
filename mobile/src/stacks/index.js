@@ -7,6 +7,8 @@ import LoginScreen from '../screens/login/index';
 import HomeScreen from '../screens/home/index';
 import Logo from '../components/logo';
 
+import PasswordScreen from '../screens/password/index';
+
 const Stack = createNativeStackNavigator();
 
 const screenOptions = {
@@ -24,6 +26,10 @@ const screenOptions = {
 function Screens() {
   return (
     <Stack.Navigator screenOptions={ screenOptions }>
+      <Stack.Screen
+        component={ PasswordScreen }
+        name='Cadastro de senhas'
+      />
       <Stack.Screen 
         component={ LoginScreen } 
         name='Entrar'
@@ -42,6 +48,7 @@ function Screens() {
         component={ CreateCategory }
         name='Criar categoria'
       />
+            
     </Stack.Navigator>
   );
 }
