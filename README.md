@@ -18,3 +18,53 @@ npm install
 #Roda a aplicação em modo de desenvolvedor
 npm run dev
 ```
+
+### TESTANDO
+
+Para se testar a api é necessário que você utilize os seguintes comandos
+
+```
+#Entra na pasta da api
+cd api
+#Executa os testes automatizados de integração
+npm run test
+```
+
+## FRONTEND
+
+### COMO SE RODAR
+
+Para se rodar o frontend é necessário que primeiro você execute os seguintes comandos:
+
+```
+#Entra na pasta do frontend
+cd mobile
+#Instala as dependências do frontend
+npm install
+```
+
+Após executar esses comandos, você terá a opção de rodar o app em sua versão web ou mobile
+
+### WEB
+
+Para rodar a versão web execute os seguintes comandos:
+
+```
+#Começa o app
+npm run start
+#Abre a versão web
+w
+```
+
+### ANDROID
+
+Para rodar a versão de android você deve digitar os seguintes comandos
+
+```
+#Começa o app
+npm run start
+# Roda a versão de android
+a
+```
+
+É possível abrir o app no seu celular se você possuir o expo instalado no memso, para isso você deve executar o comando **npm run start**, e abrir o qr code que irá aparecer no seu terminal, no seu app do expo.
