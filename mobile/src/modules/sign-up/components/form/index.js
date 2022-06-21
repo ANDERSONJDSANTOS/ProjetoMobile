@@ -1,13 +1,32 @@
 import TextInput from '../../../../components/text-input/index';
 import Button from '../../../../components/button/index';
 
+import Error from '../../../../components/error';
+import Api from '../../../../externals/api';
+
 import { View } from 'react-native';
 import { useState } from 'react';
 
-const Form = () => {
+const Form = ({ navigation }) => {
   const [ email, setEmail ] = useState('');
   const [ name, setName ] = useState('');
+
   const [ password, setPassword ] = useState('');
+  const [ error, setError ] = useState('');
+
+  const api = new Api();
+  const goToLoginPage = () => navigation.goBack();
+
+  async function signUp() {
+    try {
+      await api.signUp(email, name, password);
+      setError('');
+      goToLoginPage();
+    }
+    catch(err) {
+      setError(err.response.data);
+    }
+  }
 
   return (
     <View>
@@ -39,7 +58,12 @@ const Form = () => {
       />
       <Button
         content='Criar'
-      />    
+        onPress={ signUp }
+      />
+      <Error 
+        error={ error }
+        style={{ marginTop:10 }}  
+      />
     </View>
   )
 }

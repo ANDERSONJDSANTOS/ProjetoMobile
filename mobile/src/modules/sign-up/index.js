@@ -4,7 +4,7 @@ import SubTitle from '../../components/sub-title/index';
 import Title from '../../components/title/index';
 import SignUpForm from './components/form/index';
 
-const SignUpModule = () => {
+const SignUpModule = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={ styles.container }>
@@ -17,7 +17,7 @@ const SignUpModule = () => {
           content='Crie sua conta para que você possa guardar suas senhas com segurança.'
           style={{ marginBottom:20 }} 
         />
-        <SignUpForm/>
+        <SignUpForm navigation={ navigation }/>
       </View>
     </ScrollView>
   );

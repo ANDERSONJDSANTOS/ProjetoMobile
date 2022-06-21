@@ -30,6 +30,10 @@ const color = [
   {
     label:'Vinho',
     value:'maroon'
+  },
+  {
+    label:'Azul',
+    value:'blue'
   }
 ];
 

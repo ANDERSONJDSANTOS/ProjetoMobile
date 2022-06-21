@@ -1,13 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreateCategory from '../screens/create-category/index';
 
+import PasswordScreen from '../screens/password/index';
 import SignUpScreen from '../screens/sign-up/index';
-import LoginScreen from '../screens/login/index';
 
+import LoginScreen from '../screens/login/index';
 import HomeScreen from '../screens/home/index';
+
 import Logo from '../components/logo';
 
-import PasswordScreen from '../screens/password/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +27,6 @@ const screenOptions = {
 function Screens() {
   return (
     <Stack.Navigator screenOptions={ screenOptions }>
-      <Stack.Screen
-        component={ PasswordScreen }
-        name='Cadastro de senhas'
-      />
       <Stack.Screen 
         component={ LoginScreen } 
         name='Entrar'
@@ -48,7 +45,10 @@ function Screens() {
         component={ CreateCategory }
         name='Criar categoria'
       />
-            
+      <Stack.Screen
+        component={ PasswordScreen }
+        name='Cadastro de senhas'
+      />
     </Stack.Navigator>
   );
 }
