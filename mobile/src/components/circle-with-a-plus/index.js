@@ -3,11 +3,9 @@ import { TouchableOpacity, View } from 'react-native';
 
 import styles from './styles';
 
-const CreateCategoryButton = ({ navigation }) => {
-  const goToCreateCategoryPage = () => navigation.navigate('Criar categoria');
-
+const CircleWithAPlus = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={ goToCreateCategoryPage }>
+    <TouchableOpacity onPress={ onPress }>
       <View style={ styles.container }>
         <Icon
           color='white'
@@ -19,4 +17,4 @@ const CreateCategoryButton = ({ navigation }) => {
   );
 }
 
-export default CreateCategoryButton;
+export default CircleWithAPlus;

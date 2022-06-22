@@ -7,10 +7,10 @@ const passwordSchema = require('./dto');
 const express = require('express');
 const route = express.Router();
 
-route.get('/', authUser, validator(passwordSchema), handler);
+route.get('/all/:tagId', authUser, validator(passwordSchema, 'params'), handler);
 
 async function handler(req, res) {
-  const { tagId } = req.body;
+  const { tagId } = req.params;
   const tags = await getPasswords(tagId);
 
   if(tags) return res.status(200).json(tags);

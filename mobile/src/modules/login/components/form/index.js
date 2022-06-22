@@ -23,7 +23,7 @@ const Form = ({ navigation }) => {
       const res = await api.login(email, password);
       const token = res.data.token;
 
-      AsyncStorage.setItem('token', token);
+      await AsyncStorage.setItem('token', token);
       
       setError('');
       goToHomePage();

@@ -1,14 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreateCategory from '../screens/create-category/index';
 
+import AllPasswords from '../screens/all-passwords/index';
 import PasswordScreen from '../screens/password/index';
+
 import SignUpScreen from '../screens/sign-up/index';
-
 import LoginScreen from '../screens/login/index';
+
 import HomeScreen from '../screens/home/index';
-
 import Logo from '../components/logo';
-
 
 const Stack = createNativeStackNavigator();
 
@@ -48,6 +48,10 @@ function Screens() {
       <Stack.Screen
         component={ PasswordScreen }
         name='Cadastro de senhas'
+      />
+      <Stack.Screen
+        component={ AllPasswords }
+        name='Todas as senhas'
       />
     </Stack.Navigator>
   );

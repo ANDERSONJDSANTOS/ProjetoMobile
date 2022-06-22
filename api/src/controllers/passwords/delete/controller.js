@@ -10,7 +10,7 @@ const route = express.Router();
 route.delete('/:id', authUser, validator(passwordSchema, 'params'), handler);
 
 async function handler(req, res) {
-  const { id } = req.parms;
+  const { id } = req.params;
   const deleted = await deletePassword(id);
 
   if(deleted) return res.status(204).send();

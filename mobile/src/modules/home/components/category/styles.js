@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     marginTop:15,
-    paddingBottom:15
+    paddingBottom:15,
+    position:'relative'
   },
 
   circle: {
@@ -29,6 +30,16 @@ const styles = StyleSheet.create({
     color:'white',
     fontSize:18,
     fontWeight:'bold'
+  },
+
+  trash: {
+    alignItems:'center',
+    color:'white',
+    fontSize:20,
+    height:'100%',
+    textAlignVertical:'bottom',
+    position:'absolute',
+    right:15
   }
 });
 

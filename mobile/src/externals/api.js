@@ -47,6 +47,57 @@ class Api {
     const res = await axios.post(url, data, config);
     return res;
   }
+
+
+  async deletePassword(id) {
+    const token = await AsyncStorage.getItem('token');
+    const url = `${this.base}/passwords/${id}`;
+    
+    const config = { withCredentials:true, headers:{ 'Authorization':token } };
+    const res = await axios.delete(url, config);
+
+    return res;
+  }
+
+
+  async getPasswords() {
+    const token = await AsyncStorage.getItem('token');
+    const tagId = await AsyncStorage.getItem('tagId');
+
+    const url = `${this.base}/passwords/all/${tagId}`;
+    const config = { 
+      withCredentials:true, 
+      headers:{ 'Authorization':token }
+    };
+
+    const res = await axios.get(url, config);
+    return res;
+  }
+
+
+  async createPassword(urlData, name, password) {
+    const token = await AsyncStorage.getItem('token');
+    const url = `${this.base}/passwords`;
+    
+    const tagId = await AsyncStorage.getItem('tagId');
+    const data = { url:urlData, name:name, password:password, tagId:tagId };
+
+    const config = { withCredentials:true, headers:{ 'Authorization':token } };
+    const res = await axios.post(url, data, config);
+    
+    return res;
+  }
+
+
+  async deleteTag(id) {
+    const token = await AsyncStorage.getItem('token');
+
+    const url = `${this.base}/tags/${id}`;
+    const config = { withCredentials:true, headers:{ 'Authorization':token } };
+
+    const res = await axios.delete(url, config);
+    return res;
+  }
 }
 
 export default Api;
