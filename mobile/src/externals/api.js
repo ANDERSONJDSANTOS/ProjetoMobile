@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 class Api {
-  base = 'http://10.0.2.2:8000';
+  base = 'http://localhost:8000';
 
   async login(email, password) {
     const url = `${this.base}/users/login`;
